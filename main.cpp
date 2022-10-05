@@ -46,6 +46,10 @@ int main(){
         
     }
 
+    //hay que hacer un output que sea main.log
+    //consejo, seguir y buscar mas informacion de como hacerlo en la pagina de abajo.
+    //https://stackoverflow.com/questions/7400418/writing-a-log-file-in-c-c
+    
     archivo.close();
     printf("me caes bien");
     return 0;

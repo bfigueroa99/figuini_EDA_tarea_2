@@ -1,16 +1,20 @@
 #include<iostream>
 #include<fstream>
-#include<cstdlib>  
-#include<algorithm>
+// #include<cstdlib>  
+// #include<algorithm>
+#include<cstdio>
 
 using namespace std;
 
-int main(){
+int main(int argc, char* argv[]){
     ifstream archivo("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
     string texto;
 
     string palabras_reservadas[12] = {"<body>","</body>","<center>","</center>","<h1>","</h1>","<p>","</p>","<ol>","</ol>","<li>","</li>"};
 
+    //este freopen sera para escribir en el main.log
+    freopen("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log", "w", stdout); //hay que editar esto para que sea en tu caso
+    
     if(archivo.fail()){
         cout<<"no se pudo abrir"<<endl;
         exit(1);
@@ -49,8 +53,9 @@ int main(){
     //hay que hacer un output que sea main.log
     //consejo, seguir y buscar mas informacion de como hacerlo en la pagina de abajo.
     //https://stackoverflow.com/questions/7400418/writing-a-log-file-in-c-c
-    
+
     archivo.close();
-    printf("me caes bien");
+    std::fclose(stdout);
+    // printf("me caes bien");
     return 0;
 }

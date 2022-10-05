@@ -50,10 +50,6 @@ int main(int argc, char* argv[]){
         
     }
 
-    //hay que hacer un output que sea main.log
-    //consejo, seguir y buscar mas informacion de como hacerlo en la pagina de abajo.
-    //https://stackoverflow.com/questions/7400418/writing-a-log-file-in-c-c
-
     archivo.close();
     std::fclose(stdout);
     // printf("me caes bien");

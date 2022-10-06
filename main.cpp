@@ -59,6 +59,10 @@ int main(int argc, char* argv[]){
                         ptr = stack.top();
                         string tmp = ptr->getData();
                         if(tmp == palabras_reservadas[i-1]){
+                            if(stack.isEmpty()){
+                                cout << " NOT OK\n";
+                                break;
+                            }
                             cout << " OK\n";
                             stack.pop();
                         }
@@ -68,6 +72,9 @@ int main(int argc, char* argv[]){
             }
 
             if(!found){
+                ptr = new eda::Node();
+                ptr->setData(word);
+                stack.push(ptr);
                 cout << " NOT OK\n";
             }
             word = "";

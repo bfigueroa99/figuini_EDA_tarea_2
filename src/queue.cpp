@@ -5,7 +5,7 @@
  *      Author: jsaavedr
  */
 
-#include "adts/queue.hpp"
+#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/queue.hpp"
 
 namespace eda {
 

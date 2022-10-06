@@ -1,6 +1,6 @@
-#include "adts/node.hpp"
-#include "adts/queue.hpp"
-#include "adts/stack.hpp"
+#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/node.hpp"
+#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/queue.hpp"
+#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/stack.hpp"
 #include <iostream>
 #include <cstring>
 

@@ -1,32 +1,30 @@
 /*
- * queue.hpp
+ * stack.hpp
  *
  *  Created on: Aug 18, 2022
  *      Author: jsaavedr
  */
 
-#ifndef QUEUE_HPP_
-#define QUEUE_HPP_
+#ifndef STACK_HPP_
+#define STACK_HPP_
 
-#include "adts/node.hpp"
+#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/node.hpp"
 
 namespace eda {
 
-class Queue {
+class Stack {
 private:
 	Node* head;
-	Node* tail;
 public:
-	Queue();
-	void push(char val);
+	Stack();
 	void push(Node* node);
 	void pop();
 	Node* top();
 	bool isEmpty();
 	void clear();
-	virtual ~Queue();
+	virtual ~Stack();
 };
 
 } /* namespace eda */
 
-#endif /* QUEUE_HPP_ */
+#endif /* STACK_HPP_ */

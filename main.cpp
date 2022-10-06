@@ -52,17 +52,18 @@ using namespace std;
 // 	return 0;
 // }
 
+// if (texto.find(palabras_reservadas[0]) != std::string::npos) {}
 
 
 
 int main(int argc, char* argv[]){
-    ifstream archivo("test.html"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
+    ifstream archivo("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
     string texto;
 
     string palabras_reservadas[12] = {"<body>","</body>","<center>","</center>","<h1>","</h1>","<p>","</p>","<ol>","</ol>","<li>","</li>"};
 
     //este freopen sera para escribir en el main.log
-    freopen("main.log", "w", stdout); //hay que editar esto para que sea en tu caso
+    freopen("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log", "w", stdout); //hay que editar esto para que sea en tu caso
     
     
     if(archivo.fail()){
@@ -70,7 +71,7 @@ int main(int argc, char* argv[]){
         exit(1);
     }
 
-    int pos=0;
+    int pos = 0;
     int i = 0;
     bool error = false;
     eda::Stack stack;
@@ -78,34 +79,10 @@ int main(int argc, char* argv[]){
     while(!archivo.eof()){
         getline(archivo,texto);
         cout<<texto<<endl;
-
-		if (texto.find(palabras_reservadas[0]) != std::string::npos) {
-			stack.push(new eda::Node(texto[i]));
-		}
-		if (texto.find(palabras_reservadas[1]) != std::string::npos) {
-			if (stack.isEmpty()){
-				error = true;
-			}
-			else{
-				stack.pop();
-			}
-		}
-		i = i + 1;
-        
+        if (texto.find(palabras_reservadas[0]) != std::string::npos) {
+            cout<<"se reconocio la palabra"<<endl;
+        }
     }
-
-    if (!stack.isEmpty()){
-		error = true;
-	}
-	pos = i;
-
-    if (!error){
-		std::cout<< " Expresión Correcta " << std::endl;
-	}
-	else{
-		std::cout<< " Expresión Inválida" << std::endl;
-		std::cout<< "Pos error:  " << pos	<< std::endl;
-	}
 
     archivo.close();
     std::fclose(stdout);

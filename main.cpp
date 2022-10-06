@@ -50,10 +50,9 @@ int main(int argc, char* argv[]){
             for(int i = 0; i < 12; i++){
                 if(word == palabras_reservadas[i]){
                     found = true;
-                    if(i % 2 == 0){
+                    if((i % 2) == 0){
                         ptr = new eda::Node();
                         ptr->setData(word);
-                        ptr->setNext(stack.top());
                         stack.push(ptr);
                         cout << " OK\n";
                     }else{

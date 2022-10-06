@@ -33,10 +33,9 @@ int main(int argc, char* argv[]){
     }
 
     int pos = 0;
-    int i = 0;
     char c;
     string word;
-    bool error = false;
+    bool found = false;
     eda::Stack stack;
 
     while(!feof(archivo)){
@@ -69,7 +68,18 @@ int main(int argc, char* argv[]){
             // eda::Node* ptr;
             word = word + c;
 
-            cout << word << endl;
+            cout << "tag " << word;
+            for(int i = 0; i < 12; i++){
+                if(word == palabras_reservadas[i]){
+                    found = true;
+                }
+            }
+
+            if(found){
+                cout << " OK\n";
+            }else{
+                cout << " NOT OK\n";
+            }
             word = "";
             continue;
 

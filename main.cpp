@@ -57,13 +57,22 @@ using namespace std;
 
 
 int main(int argc, char* argv[]){
-    ifstream archivo("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
+
+    // //FIGUE
+    // const char* rutamain = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log"; 
+    // const char* rutatest = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html";
+
+    //Stefano
+    const char* rutamain = "";
+    const char* rutatest = "";
+
+    ifstream archivo(rutatest); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
     string texto;
 
     string palabras_reservadas[12] = {"<body>","</body>","<center>","</center>","<h1>","</h1>","<p>","</p>","<ol>","</ol>","<li>","</li>"};
 
     //este freopen sera para escribir en el main.log
-    freopen("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log", "w", stdout); //hay que editar esto para que sea en tu caso
+    freopen(rutamain, "w", stdout); //hay que editar esto para que sea en tu caso
     
     
     if(archivo.fail()){
@@ -79,6 +88,30 @@ int main(int argc, char* argv[]){
     while(!archivo.eof()){
         getline(archivo,texto);
         cout<<texto<<endl;
+
+        // bool error = false;
+	    // int i = 0;
+        // Stack stack;
+        // while (!error && i < input.length()){
+        //     if (input[i] == '(') {
+        //         stack.push(new Node(input[i]));
+        //     }
+        //     if (input[i] == ')') {
+        //         if (stack.isEmpty()){
+        //             error = true;
+        //         }
+        //         else{
+        //             stack.pop();
+        //         }
+        //     }
+        //     i = i + 1;
+        // }
+        // if (!stack.isEmpty()){
+        //     error = true;
+        // }
+        // *pos = i - 1 ;
+
+
         if (texto.find(palabras_reservadas[0]) != std::string::npos) {
             cout<<"se reconocio la palabra"<<endl;
         }

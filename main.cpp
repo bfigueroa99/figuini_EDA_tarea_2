@@ -32,15 +32,13 @@ int main(int argc, char* argv[]){
         exit(1);
     }
 
-    int pos = 0;
     char c;
-    string word;
     bool found = false;
+    string word = "";
     eda::Stack stack;
 
     while(!feof(archivo)){
         c = getc(archivo);
-        pos++;
 
         // bool error = false;
 	    // int i = 0;
@@ -65,26 +63,38 @@ int main(int argc, char* argv[]){
         // *pos = i - 1 ;
 
         if(c == '>'){
-            // eda::Node* ptr;
+            eda::Node* ptr;
             word = word + c;
+            found = false;
 
             cout << "tag " << word;
+
             for(int i = 0; i < 12; i++){
                 if(word == palabras_reservadas[i]){
                     found = true;
+                    if(i % 2 == 0){
+                        ptr = new eda::Node();
+                        ptr->setData(word);
+                        ptr->setNext(stack.top());
+                        stack.push(ptr);
+                        cout << " OK\n";
+                    }else{
+                        ptr = stack.top();
+                        string tmp = ptr->getData();
+                        if(tmp == palabras_reservadas[i-1]){
+                            cout << " OK\n";
+                            stack.pop();
+                        }
+                    }
+                    break;
                 }
             }
 
-            if(found){
-                cout << " OK\n";
-            }else{
+            if(!found){
                 cout << " NOT OK\n";
             }
             word = "";
             continue;
-
-            // ptr = new eda::Node(word, stack.top());
-            // stack.push(ptr);
         }
 
         if(c == '<'){

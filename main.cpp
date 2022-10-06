@@ -10,13 +10,13 @@ using namespace std;
 
 int main(int argc, char* argv[]){
 
-    // //FIGUE
-    // const char* rutamain = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log"; 
-    // const char* rutatest = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html";
+    //FIGUE
+    const char* rutamain = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log"; 
+    string rutatest = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html";
 
-    //Stefano
-    const char* rutamain = "/home/stefano/dev/eda/figuini_EDA_tarea_2/main.log";
-    string rutatest = "/home/stefano/dev/eda/figuini_EDA_tarea_2/test.html";
+    // //Stefano
+    // const char* rutamain = "/home/stefano/dev/eda/figuini_EDA_tarea_2/main.log";
+    // string rutatest = "/home/stefano/dev/eda/figuini_EDA_tarea_2/test.html";
 
     FILE* archivo = fopen(rutatest.c_str(), "r"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
     string texto;
@@ -45,8 +45,7 @@ int main(int argc, char* argv[]){
             word = word + c;
             found = false;
 
-            cout << "tag " << word;
-
+            
             for(int i = 0; i < 12; i++){
                 if(word == palabras_reservadas[i]){
                     found = true;
@@ -54,18 +53,23 @@ int main(int argc, char* argv[]){
                         ptr = new eda::Node();
                         ptr->setData(word);
                         stack.push(ptr);
-                        cout << " OK\n";
-                    }else{
+                    }
+                    else{
                         if(stack.isEmpty()){
                             cout << " NOT OK\n";
                             break;
-                        }else{
+                        }
+                        else{
                             ptr = stack.top();
                             string tmp = ptr->getData();
                             if(tmp == palabras_reservadas[i-1]){
-                                
+                                cout << "tag " << tmp;
                                 cout << " OK\n";
                                 stack.pop();
+                            }
+                            else{
+                                cout<< "tag " << tmp;
+                                cout << " NOT OK\n";
                             }
                         }
                     }

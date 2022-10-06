@@ -40,28 +40,6 @@ int main(int argc, char* argv[]){
     while(!feof(archivo)){
         c = getc(archivo);
 
-        // bool error = false;
-	    // int i = 0;
-        // Stack stack;
-        // while (!error && i < input.length()){
-        //     if (input[i] == '(') {
-        //         stack.push(new Node(input[i]));
-        //     }
-        //     if (input[i] == ')') {
-        //         if (stack.isEmpty()){
-        //             error = true;
-        //         }
-        //         else{
-        //             stack.pop();
-        //         }
-        //     }
-        //     i = i + 1;
-        // }
-        // if (!stack.isEmpty()){
-        //     error = true;
-        // }
-        // *pos = i - 1 ;
-
         if(c == '>'){
             eda::Node* ptr;
             word = word + c;
@@ -105,21 +83,6 @@ int main(int argc, char* argv[]){
         if(word != ""){
             word = word + c;
         }
-
-        // if (texto.find("</") != std::string::npos) {
-        //     if(texto.find(">") != std::string::npos){
-        //         cout << "Linea " << pos << " OK (</>)\n";
-        //     }else{
-        //         cout << "Linea " << pos << " NOT OK (</)\n";
-        //     }
-
-        // }else if(texto.find("<") != std::string::npos){
-        //     if(texto.find(">") != std::string::npos){
-        //         cout << "Linea " << pos << " OK (<>)\n";
-        //     }else{
-        //         cout << "Linea " << pos << " NOT OK (<)\n";
-        //     }
-        // }
     }
 
     fclose(archivo);

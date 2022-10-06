@@ -56,13 +56,13 @@ using namespace std;
 
 
 int main(int argc, char* argv[]){
-    ifstream archivo("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
+    ifstream archivo("test.html"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
     string texto;
 
     string palabras_reservadas[12] = {"<body>","</body>","<center>","</center>","<h1>","</h1>","<p>","</p>","<ol>","</ol>","<li>","</li>"};
 
     //este freopen sera para escribir en el main.log
-    freopen("/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log", "w", stdout); //hay que editar esto para que sea en tu caso
+    freopen("main.log", "w", stdout); //hay que editar esto para que sea en tu caso
     
     
     if(archivo.fail()){

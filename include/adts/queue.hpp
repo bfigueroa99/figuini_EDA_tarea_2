@@ -8,7 +8,7 @@
 #ifndef QUEUE_HPP_
 #define QUEUE_HPP_
 
-#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/node.hpp"
+#include "node.hpp"
 
 namespace eda {
 

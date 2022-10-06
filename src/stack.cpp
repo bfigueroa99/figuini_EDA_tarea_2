@@ -5,7 +5,7 @@
  *      Author: jsaavedr
  */
 
-#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/stack.hpp"
+#include "../include/adts/stack.hpp"
 
 namespace eda {
 

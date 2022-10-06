@@ -2,7 +2,7 @@
  * nodo.cpp
  */
 
-#include "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/include/adts/node.hpp"
+#include "../include/adts/node.hpp"
 #include <iostream>
 
 namespace eda {

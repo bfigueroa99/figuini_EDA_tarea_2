@@ -5,6 +5,8 @@
  *      Author: jsaavedr
  */
 
+#include <string>
+
 #ifndef STACK_HPP_
 #define STACK_HPP_
 

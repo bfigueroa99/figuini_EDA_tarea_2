@@ -13,4 +13,4 @@ Compiling with CMake
 - make
 
 Running
-- ./test
+- ./Tarea2

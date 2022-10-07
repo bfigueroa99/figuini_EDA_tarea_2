@@ -11,12 +11,16 @@ using namespace std;
 int main(int argc, char* argv[]){
 
     //FIGUE
-    const char* rutamain = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log"; 
-    string rutatest = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html";
+    // const char* rutamain = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/main.log"; 
+    // string rutatest = "/home/figue/Documents/Codigos/EDA/Tareas/tarea2/figuini_EDA_tarea_2/test.html";
 
     // //Stefano
     // const char* rutamain = "/home/stefano/dev/eda/figuini_EDA_tarea_2/main.log";
     // string rutatest = "/home/stefano/dev/eda/figuini_EDA_tarea_2/test.html";
+
+    //Tester
+    const char* rutamain = "main.log"; 
+    string rutatest = "test.html";
 
     FILE* archivo = fopen(rutatest.c_str(), "r"); //hay que editar esto dependiendo el caso, pero en mi caso es asi.
     string texto;
